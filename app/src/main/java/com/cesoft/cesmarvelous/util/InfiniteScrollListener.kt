@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous2.util
+package com.cesoft.cesmarvelous.util
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -11,14 +11,20 @@ class InfiniteScrollListener(private val funcion:(Int) -> Unit, private val layo
 
 	private var previousTotal = 0
 	private var loading = true
-	private var visibleThreshold = 1
+	private val visibleThreshold = 1
 	private var firstVisibleItem = 0
 	private var visibleItemCount = 0
 	private var totalItemCount = 0
 
+	fun reset() {
+		previousTotal = 0
+		firstVisibleItem = 0
+		visibleItemCount = 0
+		totalItemCount = 0
+	}
+
 	override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
 		super.onScrolled(recyclerView, dx, dy)
-//Log.e(TAG, "onScrolled--"+loading+"-----------"+dy+"----------"+previousTotal+"-----------------------------"+totalItemCount+" - "+visibleItemCount+" <= "+firstVisibleItem+" + "+visibleThreshold+"---------")
 		if (dy > 0) {
 			visibleItemCount = recyclerView.childCount
 			totalItemCount = layoutManager.itemCount
@@ -26,14 +32,12 @@ class InfiniteScrollListener(private val funcion:(Int) -> Unit, private val layo
 
 			if(loading) {
 				if(totalItemCount > previousTotal) {
-					//Log.e(TAG, "onScrolled----a-------"+loading+"----------------------------")
 					loading = false
 					previousTotal = totalItemCount
 				}
 			}
 			if(!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
-				//Log.e(TAG, "onScrolled-----b------"+loading+"----------------------------")
-				funcion(layoutManager.findFirstVisibleItemPosition())
+				funcion(firstVisibleItem)
 				loading = true
 			}
 		}

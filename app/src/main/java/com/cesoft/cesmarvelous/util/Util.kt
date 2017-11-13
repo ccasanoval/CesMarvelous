@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous2.util
+package com.cesoft.cesmarvelous.util
 
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException

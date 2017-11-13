@@ -2,4 +2,9 @@
     <string name="app_name">CesMarvelous</string>
     <string name="imagen_del_comic">Imagen del comic</string>
     <string name="descripcion">Descripción:</string>
+    <string name="numero_paginas">#Páginas:</string>
+    <string name="issue">Issue:</string>
+    <string name="err_net">Error al cargar los datos desde el servidor</string>
+    <string name="ok_net">Datos cargados</string>
+    <string name="isbn">ISBN:</string>
 </resources>

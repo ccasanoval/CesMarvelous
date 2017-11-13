@@ -1,7 +1,7 @@
-package com.cesoft.cesmarvelous2.ws
+package com.cesoft.cesmarvelous.ws
 
-import com.cesoft.cesmarvelous2.BuildConfig
-import com.cesoft.cesmarvelous2.util.Util
+import com.cesoft.cesmarvelous.BuildConfig
+import com.cesoft.cesmarvelous.util.Util
 
 /**
  * Created by ccasanova on 13/11/2017

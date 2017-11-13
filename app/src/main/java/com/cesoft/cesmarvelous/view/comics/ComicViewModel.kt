@@ -1,8 +1,8 @@
-package com.cesoft.cesmarvelous2.view.comics
+package com.cesoft.cesmarvelous.view.comics
 
 import android.databinding.BindingAdapter
 import android.widget.ImageView
-import com.cesoft.cesmarvelous2.model.Model
+import com.cesoft.cesmarvelous.model.Model
 import com.squareup.picasso.Picasso
 
 

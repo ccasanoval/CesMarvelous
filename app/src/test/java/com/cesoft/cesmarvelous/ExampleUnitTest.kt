@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous2
+package com.cesoft.cesmarvelous
 
 import org.junit.Test
 

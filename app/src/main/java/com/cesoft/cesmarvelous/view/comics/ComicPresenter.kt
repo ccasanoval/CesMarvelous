@@ -1,11 +1,11 @@
-package com.cesoft.cesmarvelous2.view.comics
+package com.cesoft.cesmarvelous.view.comics
 
-import com.cesoft.cesmarvelous2.model.Model
-import com.cesoft.cesmarvelous2.util.Log
-import com.cesoft.cesmarvelous2.ws.ComicDataResponse
-import com.cesoft.cesmarvelous2.ws.MarvelWebService
-import com.cesoft.cesmarvelous2.ws.MarvelWebService.Companion.ORDER_COMIC_TITLE
-import com.cesoft.cesmarvelous2.ws.Token
+import com.cesoft.cesmarvelous.model.Model
+import com.cesoft.cesmarvelous.util.Log
+import com.cesoft.cesmarvelous.ws.ComicDataResponse
+import com.cesoft.cesmarvelous.ws.MarvelWebService
+import com.cesoft.cesmarvelous.ws.MarvelWebService.Companion.ORDER_COMIC_TITLE
+import com.cesoft.cesmarvelous.ws.Token
 import rx.Subscription
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -36,7 +36,7 @@ class ComicPresenter(private var view: ComicContract.View) : ComicContract.Prese
 
 	//______________________________________________________________________________________________
 	override fun loadComicList() {
-		Log.e(TAG, "loadComicList:------------------------------------------------------")
+		//Log.e(TAG, "loadComicList:-------------------------------------------------------------")
 		val token = Token()
 		manageSub(
 			service.getComics(ORDER_COMIC_TITLE, token.serial, token.public, token.hash, defaultLimit)
@@ -45,17 +45,10 @@ class ComicPresenter(private var view: ComicContract.View) : ComicContract.Prese
 				.subscribe(
 				{
 					c: ComicDataResponse ->
-						Log.e(TAG, "loadComicList:--------0------------"+countLimit)
-						Log.e(TAG, "loadComicList:--------1------------"+c.code+" : "+c.status)
 						if(c.data != null) {
 							comicList = c.data.results
 							countLimit = c.data.count
 							view.onSuccess(c)
-
-							Log.e(TAG, "loadComicList:--------2------------"+c.data.count+" : "+c.data.total)
-							Log.e(TAG, "loadComicList:--------3------------"+ c.data.results!![1].title)
-							Log.e(TAG, "loadComicList:--------3------------"+ c.data.results!![1].description)
-
 						}
 						else
 							view.onError(Exception("No hay datos"))
@@ -63,7 +56,7 @@ class ComicPresenter(private var view: ComicContract.View) : ComicContract.Prese
 				{
 					e ->
 						view.onError(e)
-						Log.e(TAG, "loadComicList:e:--------------------------------", e)
+						Log.e(TAG, "loadComicList:e:-------------------------------------------", e)
 				})
 		)
 	}
@@ -71,8 +64,7 @@ class ComicPresenter(private var view: ComicContract.View) : ComicContract.Prese
 	//______________________________________________________________________________________________
 	override fun loadMoreComics(adapter: ComicAdapter)
 	{
-		Log.e(TAG, "loadMoreComics:------------------------------------------------------")
-
+		//Log.e(TAG, "loadMoreComics:------------------------------------------------------")
 		val token = Token()
 		manageSub(
 			service.getComics(ORDER_COMIC_TITLE, token.serial, token.public, token.hash, countLimit + defaultLimit)
@@ -83,30 +75,24 @@ class ComicPresenter(private var view: ComicContract.View) : ComicContract.Prese
 					c ->
 						view.onSuccess(c)
 						updateIndexesForRequests(adapter, c)
-					Log.e(TAG, "loadMoreComics:-------------------"+countLimit+"-"+defaultLimit+"------------")
+					//Log.e(TAG, "loadMoreComics:-------------------"+countLimit+"-"+defaultLimit+"------------")
 				},
 				{
 					e ->
 						view.onError(e)
-						Log.e(TAG, "loadMoreComics:e:--------------------------------", e)
+						Log.e(TAG, "loadMoreComics:e:------------------------------------------", e)
 				})
 		)
 	}
 	//______________________________________________________________________________________________
 	private fun updateIndexesForRequests(adapter: ComicAdapter, response: ComicDataResponse) {
-		Log.e(TAG, "updateIndexesForRequests:-----1-----------------------------------"+countLimit)
-
 		adapter.response = response
 		adapter.notifyItemRangeChanged(countLimit, countLimit + defaultLimit)
-
 		countLimit += defaultLimit
-		Log.e(TAG, "updateIndexesForRequests:-----2-----------------------------------"+countLimit)
-
 	}
 
 	//______________________________________________________________________________________________
 	override fun showDetalle(comic: Model.Comic) {
-		Log.e(TAG, "showDetalle:---------------------------------------------------------------")
 		view.showDetalle(comic)
 	}
 

@@ -7,7 +7,7 @@
         android:layout_height="wrap_content">
         <variable
             name="viewmodel"
-            type="com.cesoft.cesmarvelous2.view.comic.DetalleViewModel" />
+            type="com.cesoft.cesmarvelous.view.comic.DetalleViewModel" />
     </data>
 
     <ScrollView
@@ -26,7 +26,7 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:background="#dedede"
+                android:background="@color/colorBlanco"
                 android:scaleType="fitXY"
                 app:imgUrl="@{viewmodel.imgUrl}"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -39,13 +39,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@{viewmodel.model.title}"
-                android:textColor="#fff"
+                android:textColor="@color/colorBlanco"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgComic"
-                tools:text="TEST"/>
+                tools:text="TITLE TEST"/>
 
             <TextView
                 android:id="@+id/lblDescripcion"
@@ -58,7 +58,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="15dp"
                 android:text="@string/descripcion"
-                android:textColor="#00f"
+                android:textColor="@color/colorAzul"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,12 +73,113 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
                 android:text="@{viewmodel.description}"
-                android:textColor="#fff"
+                android:textColor="@color/colorBlanco"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lblDescripcion"
+                tools:text="test"/>
+
+            <TextView
+                android:id="@+id/lblISBN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/isbn"
+                android:textColor="@color/colorAzul"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescripcion"/>
+
+            <TextView
+                android:id="@+id/txtISBN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblDescripcion"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:text="@{viewmodel.model.isbn}"
+                android:textColor="@color/colorBlanco"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblISBN"
+                tools:text="test"/>
+
+            <TextView
+                android:id="@+id/lblIssue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/issue"
+                android:textColor="@color/colorAzul"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtISBN"/>
+
+            <TextView
+                android:id="@+id/txtIssue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblDescripcion"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:text="@{viewmodel.issueNumber}"
+                android:textColor="@color/colorBlanco"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblIssue"
+                tools:text="test"/>
+
+            <TextView
+                android:id="@+id/lblPageCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/numero_paginas"
+                android:textColor="@color/colorAzul"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtIssue"/>
+
+            <TextView
+                android:id="@+id/txtPageCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:text="@{viewmodel.pageCount}"
+                android:textColor="@color/colorBlanco"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblPageCount"
                 tools:text="test"/>
 
         </android.support.constraint.ConstraintLayout>

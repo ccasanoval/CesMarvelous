@@ -1,6 +1,6 @@
-package com.cesoft.cesmarvelous2.ws
+package com.cesoft.cesmarvelous.ws
 
-import com.cesoft.cesmarvelous2.model.Model
+import com.cesoft.cesmarvelous.model.Model
 
 
 /**

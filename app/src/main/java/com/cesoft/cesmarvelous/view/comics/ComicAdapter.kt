@@ -1,13 +1,13 @@
-package com.cesoft.cesmarvelous2.view.comics
+package com.cesoft.cesmarvelous.view.comics
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.cesoft.cesmarvelous2.R
-import com.cesoft.cesmarvelous2.databinding.ItemComicBinding
-import com.cesoft.cesmarvelous2.model.Model
-import com.cesoft.cesmarvelous2.ws.ComicDataResponse
+import com.cesoft.cesmarvelous.R
+import com.cesoft.cesmarvelous.databinding.ItemComicBinding
+import com.cesoft.cesmarvelous.model.Model
+import com.cesoft.cesmarvelous.ws.ComicDataResponse
 
 /**
  * Created by ccasanova on 08/11/2017

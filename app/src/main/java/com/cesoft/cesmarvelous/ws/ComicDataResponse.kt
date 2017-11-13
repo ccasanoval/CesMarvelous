@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous2.ws
+package com.cesoft.cesmarvelous.ws
 
 /**
  * Created by ccasanova on 08/11/2017

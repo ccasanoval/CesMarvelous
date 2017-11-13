@@ -1,13 +1,13 @@
-package com.cesoft.cesmarvelous2.view.comic
+package com.cesoft.cesmarvelous.view.comic
 
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import com.cesoft.cesmarvelous2.R
-import com.cesoft.cesmarvelous2.databinding.ActDetalleBinding
-import com.cesoft.cesmarvelous2.model.Model
-import com.cesoft.cesmarvelous2.util.Log
+import com.cesoft.cesmarvelous.R
+import com.cesoft.cesmarvelous.databinding.ActDetalleBinding
+import com.cesoft.cesmarvelous.model.Model
+import com.cesoft.cesmarvelous.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

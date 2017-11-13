@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous2
+package com.cesoft.cesmarvelous
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
