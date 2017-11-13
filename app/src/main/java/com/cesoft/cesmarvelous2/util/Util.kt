@@ -9,6 +9,7 @@ import java.security.NoSuchAlgorithmException
 object Util {
 	private val TAG: String = Util::class.java.name
 
+	//______________________________________________________________________________________________
 	fun md5(stringToHash: String): String {
 		val MD5 = "MD5"
 

@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous2.view
+package com.cesoft.cesmarvelous2.view.comics
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
@@ -12,18 +12,18 @@ import com.cesoft.cesmarvelous2.ws.ComicDataResponse
 /**
  * Created by ccasanova on 08/11/2017
  */
-class ComicAdapter(var response: ComicDataResponse)
+class ComicAdapter(var response: ComicDataResponse, private val presenter: ComicContract.Presenter)
 	: RecyclerView.Adapter<ComicAdapter.ItemComicViewHolder>() {
 
 	//______________________________________________________________________________________________
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemComicViewHolder {
-		val itemCharacterBinding = DataBindingUtil.inflate<ItemComicBinding>(
+		val itemBinding = DataBindingUtil.inflate<ItemComicBinding>(
 				LayoutInflater.from(parent.context),
 				R.layout.item_comic,
 				parent,
 				false)
 
-		return ItemComicViewHolder(itemCharacterBinding)
+		return ItemComicViewHolder(itemBinding, presenter)//TODO: dagger
 	}
 
 	//______________________________________________________________________________________________
@@ -35,11 +35,11 @@ class ComicAdapter(var response: ComicDataResponse)
 	override fun getItemCount() = response.data!!.results!!.size
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
-	class ItemComicViewHolder(private val binding: ItemComicBinding)
+	class ItemComicViewHolder(private val binding: ItemComicBinding, private val presenter: ComicContract.Presenter)
 		: RecyclerView.ViewHolder(binding.cardView) {
-		fun bindItemComic(character: Model.Comic) {
-			val viewmodel = ComicViewModel.Item(itemView.context, character)
-			//binding.cardView.setOnClickListener({ viewmodel.openDetailActivity() })
+		fun bindItemComic(comic: Model.Comic) {
+			val viewmodel = ComicViewModel(comic)
+			binding.cardView.setOnClickListener({ presenter.showDetalle(comic) })
 			binding.viewmodel = viewmodel
 		}
 	}

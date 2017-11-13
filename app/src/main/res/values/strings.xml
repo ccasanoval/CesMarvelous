@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">CESMarvelous2</string>
+    <string name="app_name">CesMarvelous</string>
+    <string name="imagen_del_comic">Imagen del comic</string>
+    <string name="descripcion">Descripción:</string>
 </resources>
