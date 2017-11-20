@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous.view.comics
+package com.cesoft.cesmarvelous.view.lista
 
 import com.cesoft.cesmarvelous.model.Model
 import com.cesoft.cesmarvelous.ws.ComicDataResponse

@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous.view.comic
+package com.cesoft.cesmarvelous.view.detalle
 
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity

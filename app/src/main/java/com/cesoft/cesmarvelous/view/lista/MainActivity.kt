@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous.view.comics
+package com.cesoft.cesmarvelous.view.lista
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -10,7 +10,7 @@ import com.cesoft.cesmarvelous.R
 import com.cesoft.cesmarvelous.model.Model
 import com.cesoft.cesmarvelous.util.InfiniteScrollListener
 import com.cesoft.cesmarvelous.util.Log
-import com.cesoft.cesmarvelous.view.comic.DetalleActivity
+import com.cesoft.cesmarvelous.view.detalle.DetalleActivity
 import com.cesoft.cesmarvelous.ws.ComicDataResponse
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.act_main.*

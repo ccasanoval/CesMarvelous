@@ -7,7 +7,7 @@
         android:layout_height="wrap_content">
         <variable
             name="viewmodel"
-            type="com.cesoft.cesmarvelous.view.comic.DetalleViewModel" />
+            type="com.cesoft.cesmarvelous.view.detalle.DetalleViewModel" />
     </data>
 
     <ScrollView

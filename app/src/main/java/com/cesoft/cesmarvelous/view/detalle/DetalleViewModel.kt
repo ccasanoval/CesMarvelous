@@ -1,11 +1,8 @@
-package com.cesoft.cesmarvelous.view.comic
+package com.cesoft.cesmarvelous.view.detalle
 
-import android.databinding.BindingAdapter
 import android.os.Build
 import android.text.Html
-import android.widget.ImageView
 import com.cesoft.cesmarvelous.model.Model
-import com.squareup.picasso.Picasso
 
 
 /**

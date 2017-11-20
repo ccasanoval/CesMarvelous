@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous.view.comics
+package com.cesoft.cesmarvelous.view.lista
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
