@@ -21,13 +21,13 @@ class DetalleViewModel(var model: Model.Comic) {
 	//______________________________________________________________________________________________
 	//var imgUrl = imgUrl()
 	fun imgUrl(): String = model.thumbnail.path + IMAGE_TYPE + model.thumbnail.extension
-	object ImageViewBindingAdapter {
+	/*object ImageViewBindingAdapter {
 		@BindingAdapter("bind:imgUrl")
 		@JvmStatic
 		fun loadImage(view: ImageView, url: String) {
 			Picasso.with(view.context).load(url).into(view)
 		}
-	}
+	}*/
 
 	//______________________________________________________________________________________________
 	var title = model.title

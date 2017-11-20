@@ -1,20 +1,24 @@
 package com.cesoft.cesmarvelous.util
 
+import java.math.BigInteger
 import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
+
 
 /**
  * Created by ccasanova on 08/11/2017
  */
 object Util {
-	private val TAG: String = Util::class.java.name
+	//private val TAG: String = Util::class.java.name
+
+	fun md5(stringToHash: String): String {
+		val md = MessageDigest.getInstance("MD5")
+		return BigInteger(1, md.digest(stringToHash.toByteArray())).toString(16)
+	}
 
 	//______________________________________________________________________________________________
-	fun md5(stringToHash: String): String {
-		val MD5 = "MD5"
-
+	/*fun md5_(stringToHash: String): String {
 		try {
-			val digest = MessageDigest.getInstance(MD5)
+			val digest = MessageDigest.getInstance("MD5")
 			digest.update(stringToHash.toByteArray())
 			val messageDigest = digest.digest()
 
@@ -32,6 +36,6 @@ object Util {
 		}
 
 		return ""
-	}
+	}*/
 
 }

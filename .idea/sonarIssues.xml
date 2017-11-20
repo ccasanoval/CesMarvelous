@@ -3,7 +3,152 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/model/coches/Coche.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/model/coches/DetallesCoche.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/evolucionkm/EvolucionKmFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/evolucionkm/EvolucionKmPresenter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/evolucionkm/EvolucionKmPresenterImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/res/layout/fragment_evolucion_kms.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/test/java/es/bancosantander/android/EvolucionKmTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/app/src/main/java/es/bancosantander/android/utils/XMLSeguro.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/app/src/main/java/es/bancosantander/android/version/RCVersion.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanPosicionGlobalRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanTokenRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanUserDataRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanUsuarioRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderBaseRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderClienteRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderContratosRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderCuentasRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderFirmasRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderRemesasRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderTransferenciasRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/saxparser/SanParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/util/XMLSeguro.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/util/XMLUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CLEAN/mvvm-sample-app-master/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CLEAN/mvvm-sample-app-master/gradle/wrapper/gradle-wrapper.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/cesoft/cesmarvelous/ExampleInstrumentedTest.kt">
           <value>
             <set />
           </value>
@@ -13,32 +158,122 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/App.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/model/Model.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/di/AppComponent.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/util/InfiniteScrollListener.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/di/AppModule.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/util/Util.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/App.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/comic/DetalleViewModel.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/MainActivity.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/comics/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/ws/Token.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/model/Model.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/util/InfiniteScrollListener.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/comic/DetalleViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/comics/ComicPresenter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/comics/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/item_comic_mask.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/act_detalle.xml">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/act_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_comic.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLEAN/kotlin-architecture-components/app/src/main/kotlin/com/generalmobile/app/gmnotes/Application.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../CLEAN/kotlin-architecture-components/app/src/main/kotlin/com/generalmobile/app/gmnotes/core/BaseActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DARK-master/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DARK-master/app/build/generated/source/buildConfig/debug/br/com/lucasalbuquerque/BuildConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DARK-master/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DARK-master/local.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DARK-master/repository-remote-retrofit/build.gradle">
           <value>
             <set />
           </value>

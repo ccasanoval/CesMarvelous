@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 /**
  * Created by ccasanova on 08/11/2017
  */
-class InfiniteScrollListener(private val funcion:(Int) -> Unit, private val layoutManager: LinearLayoutManager)
+class InfiniteScrollListener(private val callback:(Int) -> Unit, private val layoutManager: LinearLayoutManager)
 	: RecyclerView.OnScrollListener() {
 
 	private var previousTotal = 0
@@ -16,6 +16,7 @@ class InfiniteScrollListener(private val funcion:(Int) -> Unit, private val layo
 	private var visibleItemCount = 0
 	private var totalItemCount = 0
 
+	//______________________________________________________________________________________________
 	fun reset() {
 		previousTotal = 0
 		firstVisibleItem = 0
@@ -23,6 +24,7 @@ class InfiniteScrollListener(private val funcion:(Int) -> Unit, private val layo
 		totalItemCount = 0
 	}
 
+	//______________________________________________________________________________________________
 	override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
 		super.onScrolled(recyclerView, dx, dy)
 		if (dy > 0) {
@@ -37,12 +39,13 @@ class InfiniteScrollListener(private val funcion:(Int) -> Unit, private val layo
 				}
 			}
 			if(!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
-				funcion(firstVisibleItem)
+				callback(firstVisibleItem)
 				loading = true
 			}
 		}
 	}
 
+	//______________________________________________________________________________________________
 	companion object {
 		//private val TAG: String = InfiniteScrollListener::class.java.simpleName
 	}
