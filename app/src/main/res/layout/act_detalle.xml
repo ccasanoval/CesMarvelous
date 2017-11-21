@@ -6,8 +6,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <variable
-            name="viewmodel"
-            type="com.cesoft.cesmarvelous.view.detalle.DetalleViewModel" />
+            name="binder"
+            type="com.cesoft.cesmarvelous.view.detalle.DetalleBinder" />
     </data>
 
     <ScrollView
@@ -28,7 +28,7 @@
                 android:layout_marginTop="0dp"
                 android:background="@color/colorBlanco"
                 android:scaleType="fitXY"
-                app:imgUrl="@{viewmodel.imgUrl}"
+                app:imgUrl="@{binder.imgUrl}"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
@@ -38,7 +38,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@{viewmodel.model.title}"
+                android:text="@{binder.model.title}"
                 android:textColor="@color/colorBlanco"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -72,7 +72,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:text="@{viewmodel.description}"
+                android:text="@{binder.description}"
                 android:textColor="@color/colorBlanco"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +106,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:text="@{viewmodel.model.isbn}"
+                android:text="@{binder.model.isbn}"
                 android:textColor="@color/colorBlanco"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +140,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:text="@{viewmodel.issueNumber}"
+                android:text="@{binder.issueNumber}"
                 android:textColor="@color/colorBlanco"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -173,7 +173,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:text="@{viewmodel.pageCount}"
+                android:text="@{binder.pageCount}"
                 android:textColor="@color/colorBlanco"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"

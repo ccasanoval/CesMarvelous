@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.cesoft.cesmarvelous.view.lista.ComicViewModel" />
+            type="com.cesoft.cesmarvelous.view.lista.ListaBinder" />
     </data>
 
     <android.support.v7.widget.CardView

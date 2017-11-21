@@ -8,277 +8,137 @@
             <set />
           </value>
         </entry>
-        <entry key="/fragment.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/App.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/build.gradle">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/Utils.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/model/coches/Coche.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/base/BaseAdapter.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/model/coches/DetallesCoche.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/base/BaseLifecycleActivity.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/evolucionkm/EvolucionKmFragment.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/base/BaseViewHolder.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/evolucionkm/EvolucionKmPresenter.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/entities/Repo.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/evolucionkm/EvolucionKmPresenterImpl.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/flow/repos/ReposActivity.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/res/layout/fragment_evolucion_kms.xml">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/flow/repos/ReposLiveData.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/bansacar/san-bansacar-android/app/src/test/java/es/bancosantander/android/EvolucionKmTest.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/flow/repos/ReposViewModel.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/app/src/main/java/es/bancosantander/android/utils/XMLSeguro.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/sources/db/dao/ReposDao.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/app/src/main/java/es/bancosantander/android/version/RCVersion.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/sources/repos/ReposDataSource.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanPosicionGlobalRepository.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/sources/repos/ReposLocalDataSource.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanTokenRepository.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/sources/repos/ReposRemoteDataSource.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanUserDataRepository.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/sources/repos/ReposRepository.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SanUsuarioRepository.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/IO2017Components-master/app/build.gradle">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderBaseRepository.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/IO2017Components-master/app/src/main/java/in/keatz/components/ui/base/BaseActivity.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderClienteRepository.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/IO2017Components-master/app/src/main/java/in/keatz/components/ui/lifecycle/ComponentsActivity.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderContratosRepository.java">
+        <entry key="$PROJECT_DIR$/../../CLEAN/IO2017Components-master/build.gradle">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderCuentasRepository.java">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/detalle/ComicViewModel.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderFirmasRepository.java">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/detalle/DetalleActivity.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderRemesasRepository.java">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/detalle/DetalleViewModel.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/repository/requests/SantanderTransferenciasRepository.java">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/lista/ComicAdapter.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/saxparser/SanParser.java">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/lista/ComicPresenter.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/util/XMLSeguro.java">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/lista/ListaBinder.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="C:/a/confirming/san-confirming/comercios-library/comercios-library/src/main/java/es/bancosantander/empresas/library/util/XMLUtil.java">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/lista/ListaViewModel.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/../../CLEAN/AchyTest/app/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../../CLEAN/mvvm-sample-app-master/app/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../../CLEAN/mvvm-sample-app-master/gradle/wrapper/gradle-wrapper.properties">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/cesoft/cesmarvelous/ExampleInstrumentedTest.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/model/Model.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/util/InfiniteScrollListener.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/util/Util.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/comic/DetalleViewModel.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/comics/MainActivity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/ws/Token.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/model/Model.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/util/InfiniteScrollListener.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/comic/DetalleViewModel.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/comics/ComicPresenter.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous2/view/comics/MainActivity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/item_comic_mask.xml">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/lista/MainActivity.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/act_detalle.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/act_main.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_comic.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../CLEAN/kotlin-architecture-components/app/src/main/kotlin/com/generalmobile/app/gmnotes/Application.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../CLEAN/kotlin-architecture-components/app/src/main/kotlin/com/generalmobile/app/gmnotes/core/BaseActivity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../DARK-master/app/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../DARK-master/app/build/generated/source/buildConfig/debug/br/com/lucasalbuquerque/BuildConfig.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../DARK-master/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../DARK-master/local.properties">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../DARK-master/repository-remote-retrofit/build.gradle">
           <value>
             <set />
           </value>

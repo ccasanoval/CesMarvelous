@@ -9,7 +9,7 @@ import com.squareup.picasso.Picasso
 /**
  * Created by ccasanova on 08/11/2017
  */
-class ComicViewModel(var model: Model.Comic) {
+class ListaBinder(var model: Model.Comic) {
 
 	companion object {
 		//https://developer.marvel.com/documentation/images

@@ -1,5 +1,6 @@
 package com.cesoft.cesmarvelous.view.lista
 
+import android.arch.lifecycle.MutableLiveData
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,13 +8,14 @@ import android.view.ViewGroup
 import com.cesoft.cesmarvelous.R
 import com.cesoft.cesmarvelous.databinding.ItemComicBinding
 import com.cesoft.cesmarvelous.model.Model
-import com.cesoft.cesmarvelous.ws.ComicDataResponse
 
 /**
  * Created by ccasanova on 08/11/2017
  */
-class ComicAdapter(var response: ComicDataResponse, private val presenter: ComicContract.Presenter)
+class ComicAdapter(var lista: List<Model.Comic>)
 	: RecyclerView.Adapter<ComicAdapter.ItemComicViewHolder>() {
+
+	var comic = MutableLiveData<Model.Comic>()
 
 	//______________________________________________________________________________________________
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemComicViewHolder {
@@ -23,24 +25,27 @@ class ComicAdapter(var response: ComicDataResponse, private val presenter: Comic
 				parent,
 				false)
 
-		return ItemComicViewHolder(itemBinding, presenter)//TODO: dagger
+		return ItemComicViewHolder(itemBinding, {comic -> this.comic.value = comic})
 	}
 
 	//______________________________________________________________________________________________
 	override fun onBindViewHolder(holder: ItemComicViewHolder, position: Int) {
-		holder.bindItemComic(response.data!!.results!![position])
+		holder.bindItemComic(lista[position])
 	}
 
 	//______________________________________________________________________________________________
-	override fun getItemCount() = response.data!!.results!!.size
+	override fun getItemCount() = lista.size
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
-	class ItemComicViewHolder(private val binding: ItemComicBinding, private val presenter: ComicContract.Presenter)
+	class ItemComicViewHolder(private val binding: ItemComicBinding, private val showDetalle: (Model.Comic) -> Unit)
 		: RecyclerView.ViewHolder(binding.cardView) {
+
 		fun bindItemComic(comic: Model.Comic) {
-			val viewmodel = ComicViewModel(comic)
-			binding.cardView.setOnClickListener({ presenter.showDetalle(comic) })
-			binding.viewmodel = viewmodel
+			val binder = ListaBinder(comic)
+			binding.cardView.setOnClickListener({
+				showDetalle(comic)
+			})
+			binding.viewmodel = binder
 		}
 	}
 
