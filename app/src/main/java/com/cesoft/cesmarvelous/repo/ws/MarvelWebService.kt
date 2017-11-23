@@ -1,12 +1,14 @@
-package com.cesoft.cesmarvelous.ws
+package com.cesoft.cesmarvelous.repo.ws
 
 
-import rx.Observable
-import retrofit.http.*
-import retrofit.Retrofit
-import retrofit.GsonConverterFactory
-import retrofit.RxJavaCallAdapterFactory
 import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import io.reactivex.Observable
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Headers
+import retrofit2.http.Query
 
 /**
  * Created by ccasanova on 08/11/2017
@@ -41,26 +43,10 @@ interface MarvelWebService {
 		private val BASE_URL = "https://gateway.marvel.com:443"
 
 		fun create() : MarvelWebService {
-//			val loggingInterceptor = HttpLoggingInterceptor()
-//			loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-//			val client = OkHttpClient()
-//			client.interceptors().add(loggingInterceptor)
-			// Create an interceptor which catches requests and logs the info you want
-			/*val logRequests = object : RequestInterceptor() {
-				fun execute(request: Request): Request {
-					Log.i("REQUEST INFO", request.toString())
-					return request // return the request unaltered
-				}
-			}
-			val client = OkHttpClient()
-			val requestInterceptors = client.requestInterceptors()
-			requestInterceptros.add(logRequests)*/
-
 			val restAdapter = Retrofit.Builder()
 				.baseUrl(BASE_URL)
-				.addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+				.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 				.addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-				//.client(client)
 				.build()
 			return restAdapter.create(MarvelWebService::class.java)
 		}

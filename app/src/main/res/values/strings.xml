@@ -7,4 +7,6 @@
     <string name="err_net">Error al cargar los datos desde el servidor</string>
     <string name="ok_net">Datos cargados</string>
     <string name="isbn">ISBN:</string>
+    <string name="sin_elementos">Sin elementos</string>
+    <string name="firebase_connection_error">Error al iniciar la conexión con Firebase</string>
 </resources>

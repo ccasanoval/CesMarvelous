@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous.ws
+package com.cesoft.cesmarvelous.repo.ws
 
 import com.cesoft.cesmarvelous.BuildConfig
 import com.cesoft.cesmarvelous.util.Util

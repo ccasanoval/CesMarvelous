@@ -1,4 +1,4 @@
-package com.cesoft.cesmarvelous.ws
+package com.cesoft.cesmarvelous.repo.ws
 
 /**
  * Created by ccasanova on 08/11/2017
