@@ -27,13 +27,14 @@ class InfiniteScrollListener(private val callback:(Int) -> Unit, private val lay
 	//______________________________________________________________________________________________
 	override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
 		super.onScrolled(recyclerView, dx, dy)
-		if (dy > 0) {
+		//Log.e(TAG, "onScrolled------dx, "+dy+"---------- "+loading+" ------------------ "+totalItemCount +" :: "+ previousTotal)
+		if(dy > 0) {
 			visibleItemCount = recyclerView.childCount
 			totalItemCount = layoutManager.itemCount
 			firstVisibleItem = layoutManager.findFirstVisibleItemPosition()
 
 			if(loading) {
-				if(totalItemCount > previousTotal) {
+				if(totalItemCount >= previousTotal) {
 					loading = false
 					previousTotal = totalItemCount
 				}
@@ -47,6 +48,6 @@ class InfiniteScrollListener(private val callback:(Int) -> Unit, private val lay
 
 	//______________________________________________________________________________________________
 	companion object {
-		//private val TAG: String = InfiniteScrollListener::class.java.simpleName
+		private val TAG: String = InfiniteScrollListener::class.java.simpleName
 	}
 }

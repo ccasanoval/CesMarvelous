@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.widget.ImageView
 
 import com.cesoft.cesmarvelous.R
 import com.cesoft.cesmarvelous.model.Model
@@ -28,51 +27,60 @@ class MainActivity : AppCompatActivity() {
 	private val layoutManager = LinearLayoutManager(this)
 	private var lastVisibleItem = 0
 	private lateinit var vacioView: View
-	private lateinit var listaView: View
+	//private lateinit var listaView: View
 
 	//______________________________________________________________________________________________
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.act_main)
-
 		vacioView = findViewById(R.id.imgVacio)
-		listaView = findViewById(R.id.recyclerView)
 
 		viewModel = ViewModelProviders.of(this).get(ListaViewModel::class.java)
+		//--- LISTA DE COMICS
 		viewModel.lista.observe(this, Observer<List<Model.Comic>>
 		{
 			lista ->
-			swiperefresh.isRefreshing = false
+			//swiperefresh.isRefreshing = false
 			if(lista != null && lista.size > 0) {
-				Log.e(TAG, "LISTA OBSERV:---------------"+lista.size)
+				Log.e(TAG, "LISTA OBSERV:---------------"+lista.size+" ::::::::: "+lastVisibleItem)
 				val adapter = ListaAdapter(lista)
 				adapter.comic.observe(this, Observer<Model.Comic>{comic -> showDetalle(comic!!)})
 				recyclerView.adapter = adapter
 				goToItemList(lastVisibleItem)
 				Snackbar.make(recyclerView, R.string.ok_net, Snackbar.LENGTH_LONG).show()
 
-				listaView.visibility = View.VISIBLE
+				//listaView.visibility = View.VISIBLE
 				vacioView.visibility = View.GONE
 			}
 			else {
-				Log.e(TAG, "LISTA OBSERV:---------------LISTA = NULL")
-				listaView.visibility = View.GONE
-				vacioView.visibility = View.VISIBLE
+				Log.e(TAG, "LISTA OBSERV:---------------LISTA = NULL : "+lista?.isEmpty())
+				if(recyclerView.adapter.itemCount < 1) {
+					//listaView.visibility = View.GONE
+					vacioView.visibility = View.VISIBLE
+				}
 				Snackbar.make(recyclerView, R.string.err_net, Snackbar.LENGTH_LONG).show()
 			}
 		})
+		//---- MENSAJES
 		viewModel.mensaje.observe(this, Observer<String>
 		{
 			mensaje ->
 			Snackbar.make(recyclerView, mensaje!!, Snackbar.LENGTH_LONG).show()
 		})
+		//---- CARGANDO
+		viewModel.loading.observe(this, Observer<Boolean>
+		{
+			isLoading ->
+			Log.e(TAG, "isLoading:-----------------------"+isLoading)
+			swiperefresh.isRefreshing = isLoading!!
+		})
 
 		//---------
 		val scrollListener = InfiniteScrollListener({
 			index ->
+			Log.e(TAG, "InfiniteScrollListener:-----------------------"+index)
 				lastVisibleItem = index
-				viewModel.loadMoreComics(recyclerView.adapter as ListaAdapter)
-				swiperefresh.isRefreshing = true
+				viewModel.loadMoreComics()
 			}, layoutManager)
 		recyclerView.layoutManager = layoutManager
 		recyclerView.addOnScrollListener(scrollListener)
@@ -83,13 +91,7 @@ class MainActivity : AppCompatActivity() {
 			viewModel.loadComicList()
 		})
 
-		swiperefresh.isRefreshing = true
 	}
-
-	//______________________________________________________________________________________________
-//	override fun onDestroy() {
-//		super.onDestroy()
-//	}
 
 	//______________________________________________________________________________________________
 	private fun goToItemList(index: Int)

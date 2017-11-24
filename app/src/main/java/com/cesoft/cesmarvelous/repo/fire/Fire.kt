@@ -8,7 +8,6 @@ import com.cesoft.cesmarvelous.util.Log
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.QuerySnapshot
 import com.google.gson.Gson
 
 
@@ -152,36 +151,10 @@ class Fire {
 				if(task.isSuccessful && !task.result.isEmpty) {
 					val data: MutableList<Model.Comic> = arrayListOf()
 					for(document: DocumentSnapshot in task.result) {
-						Log.e(TAG, "loadComicList: ---1----------- "+document.id + " => " + document.data)
-
 						val json = gson.toJsonTree(document.data)
-						Log.e(TAG, "loadComicList: ----2---------- "+json)
-
 						val comic = gson.fromJson(json, Model.Comic::class.java)
-						Log.e(TAG, "loadComicList: ----3---------- "+comic.thumbnail)
-
-						//{title=100th Anniversary Special (2014) #1,
-						// description=- Have the X-Men of 2061 achieved Xavier's dream of mutants and humans living in harmony? Or will there always be a need for the X-Men?,
-						// thumbnail={extension=jpg, path=http://i.annihil.us/u/prod/marvel/i/mg/2/a0/53bae9abd8e6f},
-						// id=49009, issueNumber=1.0, pageCount=32, isbn=}
-
 						//val comic = document.toObject(Model.Comic::class.java)
-
-						/*val id = document.data["id"] as Long
-						val title = document.data["title"] as String
-						val description = document.data["description"] as String
-						var pageCount = document.data["pageCount"] as Long?
-						if(pageCount == null)pageCount=0
-						//val thumbnail = Model.Imagen(document.data["path"] as String, document.data["extension"] as String)
-						val extension = document.data["thumbnail.extension"] as String
-						val path = document.data["thumbnail.path"] as String
-						val thumbnail = Model.Imagen(path, extension)
-						val issueNumber = document.data["issueNumber"] as Double
-						val isbn = document.data["isbn"] as String
-						val comic = Model.Comic(id, title, description, pageCount, thumbnail, issueNumber, isbn)
-*/
 						data.add(comic)
-						//Log.e(TAG, "loadComicList: -------------- comic = "+comic.title)
 					}
 					callback(data, null)
 				}
@@ -190,6 +163,11 @@ class Fire {
 					callback(emptyList(), task.exception)
 				}
 			})
+	}
+
+	//______________________________________________________________________________________________
+	fun deleteComics() {
+		db.collection(ROOT_COLLECTION).document().delete()
 	}
 
 	//______________________________________________________________________________________________

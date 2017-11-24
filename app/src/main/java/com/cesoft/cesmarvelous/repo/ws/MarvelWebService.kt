@@ -24,7 +24,8 @@ interface MarvelWebService {
 		@Query("ts") ts: String,
 		@Query("apikey") apiKey: String,
 		@Query("hash") hash: String,
-		@Query("limit") limit: Int)
+		@Query("limit") limit: Int,
+		@Query("offset") offset: Int)
 			: Observable<ComicDataResponse>
 
 	//______________________________________________________________________________________________

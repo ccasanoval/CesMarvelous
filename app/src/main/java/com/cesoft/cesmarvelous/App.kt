@@ -6,6 +6,8 @@ import com.cesoft.cesmarvelous.repo.db.DatabaseCreator
 
 //TODO: Room, Cloud Firestore
 //TODO: DI Kodein  -->  https://salomonbrys.github.io/Kodein/
+//TODO: cambiar picaso por glide https://github.com/bumptech/glide
+//TODO: Subir esto y CesDoom to diawi  https://www.diawi.com/
 
 //Firestore Rules
 //https://firebase.google.com/docs/firestore/security/get-started

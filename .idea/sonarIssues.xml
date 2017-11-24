@@ -38,6 +38,11 @@
             <set />
           </value>
         </entry>
+        <entry key="C:/a/micomercio/san-micomercio-android/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../CLEAN/ArchCom/app/src/main/java/com/ik/exploringviewmodel/App.kt">
           <value>
             <set />
@@ -194,6 +199,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/repo/ws/MarvelWebService.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/util/InfiniteScrollListener.kt">
           <value>
             <set />
           </value>
