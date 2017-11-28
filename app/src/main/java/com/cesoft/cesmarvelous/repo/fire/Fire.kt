@@ -1,14 +1,12 @@
 package com.cesoft.cesmarvelous.repo.fire
 
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.gson.Gson
 
 import com.cesoft.cesmarvelous.model.Model
 import com.cesoft.cesmarvelous.util.Log
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.gson.Gson
 
 
 /**
@@ -27,8 +25,7 @@ class Fire {
 	fun ini(callback: (FirebaseUser?, Throwable?) -> Unit) {
 		if(isInit)return
 
-		/*authListener = FirebaseAuth.AuthStateListener {
-			firebaseAuth ->
+		/*authListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
 			val user = firebaseAuth.currentUser
 			if(user != null)
 			{
@@ -36,24 +33,16 @@ class Fire {
 				Log.e(TAG, "onAuthStateChanged:signed_in:" + user.uid)
 			}
 			else
-			{
 				Log.e(TAG, "onAuthStateChanged:signed_out")
-			}
 		}
 		auth.addAuthStateListener(authListener)*/
 
 		//---------------
-		/*auth.signInWithEmailAndPassword(FIRE_EMAIL, FIRE_PASS)
-			.addOnCompleteListener({
-				task ->
+		/*auth.signInWithEmailAndPassword(FIRE_EMAIL, FIRE_PASS).addOnCompleteListener({ task ->
 				if(task.isSuccessful)
-				{
 					Log.e(TAG, "signInWithEmailAndPassword: OK")
-				}
 				else
-				{
 					Log.e(TAG, "signInWithEmailAndPassword: KK")
-				}
 			})*/
 
 		//----------------
@@ -84,12 +73,12 @@ class Fire {
 
 	//______________________________________________________________________________________________
 	fun addComics(lista: List<Model.Comic>) {
+		Log.e(TAG, "addComics: ------------------ INI .................."+lista.size)
+
 		//if(true)return
 		if( ! isInit)return
-		//for(comic in lista)addComic(comic)
 		val batch = db.batch()
 		for(comic in lista) {
-
 			val data = HashMap<String, Any>()
 			data.put("id", comic.id)
 			data.put("title", comic.title)
@@ -101,59 +90,42 @@ class Fire {
 			thumbnail.put("extension", comic.thumbnail.extension)
 			thumbnail.put("path", comic.thumbnail.path)
 			data.put("thumbnail", thumbnail)
+			data.put("index", comic.index)
 
 			val ref = db.collection(ROOT_COLLECTION).document()
 			batch.set(ref, data)
+
+			Log.e(TAG, "addComics: ------------------ LOOP .................."+comic.id)
 		}
 
-		batch.commit().addOnCompleteListener(OnCompleteListener<Void> {
+		batch.commit().addOnCompleteListener({
 			task ->
 			if(task.isSuccessful) {
-				Log.e(TAG, "addComics: ------------------ Write batch succeeded.")
+				Log.e(TAG, "addComics: ------------------ Write batch succeeded..................")
 			}
 			else {
-				Log.e(TAG, "addComics: ------------------- write batch failed.", task.exception)
+				Log.e(TAG, "addComics: ------------------- write batch failed.......................", task.exception)
 			}
 		})
 	}
-	//______________________________________________________________________________________________
-	/*fun addComic(comic: Model.Comic) {
-		// Create a new user with a first and last name
-		Log.e(TAG, "addComic:---------------------------- comic : "+comic.title)
-
-		val hash = HashMap<String, Any>()
-		hash.put("id", comic.id)
-		hash.put("title", comic.title)
-		hash.put("description", comic.description)
-		hash.put("isbn", comic.isbn)
-		hash.put("issueNumber", comic.issueNumber)
-		hash.put("pageCount", comic.pageCount)
-		hash.put("thumbnail_ext", comic.thumbnail.extension)
-		hash.put("thumbnail_path", comic.thumbnail.path)
-
-		// Add a new document with a generated ID
-		db.collection(ROOT_COLLECTION)
-			.add(hash)
-			.addOnSuccessListener {
-				documentReference ->
-					Log.e(TAG, "addComic:--------------DocumentSnapshot added with ID: " + documentReference.id) }
-			.addOnFailureListener {
-				e ->
-					Log.e(TAG, "addComic:---------------------Error adding document", e) }
-	}*/
 
 	//______________________________________________________________________________________________
 	fun getComics(callback: (List<Model.Comic>, Throwable?) -> Unit) {
 		db.collection(ROOT_COLLECTION)
+			.orderBy("index")
+			//.orderBy("title")
+			//.limit(50)
+			//.whereGreaterThan("population", 100000).orderBy("population").limit(2);
 			.get()
-			.addOnCompleteListener(OnCompleteListener { task ->
-				//TODO : to fire
+			.addOnCompleteListener({ task ->
 				if(task.isSuccessful && !task.result.isEmpty) {
-					val data: MutableList<Model.Comic> = arrayListOf()
+					val data: MutableList<Model.Comic> = mutableListOf()
 					for(document: DocumentSnapshot in task.result) {
 						val json = gson.toJsonTree(document.data)
 						val comic = gson.fromJson(json, Model.Comic::class.java)
 						//val comic = document.toObject(Model.Comic::class.java)
+						comic.idFire = document.id
+						//Log.e(TAG, "loadComicList:Firebase:-------"+comic.index+" : "+comic.title+" : idFire: "+comic.idFire)
 						data.add(comic)
 					}
 					callback(data, null)
@@ -166,9 +138,22 @@ class Fire {
 	}
 
 	//______________________________________________________________________________________________
-	fun deleteComics() {
-		db.collection(ROOT_COLLECTION).document().delete()
+	fun deleteAllComics(callback: () -> Unit) {
+		Log.e(TAG, "deleteAllComics:------------------------------------------- ")
+		db.collection(ROOT_COLLECTION)
+			.get()
+			.addOnCompleteListener({ task ->
+				Log.e(TAG, "deleteAllComics:-------------------------addOnCompleteListener ")
+				if(task.isSuccessful && !task.result.isEmpty) {
+					for(document: DocumentSnapshot in task.result) {
+						Log.e(TAG, "deleteAllComics:--------------ID: "+document.reference.id)
+						document.reference.delete()
+					}
+				}
+				callback()
+			})
 	}
+
 
 	//______________________________________________________________________________________________
 	companion object {

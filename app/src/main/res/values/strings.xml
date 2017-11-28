@@ -9,4 +9,8 @@
     <string name="isbn">ISBN:</string>
     <string name="sin_elementos">Sin elementos</string>
     <string name="firebase_connection_error">Error al iniciar la conexión con Firebase</string>
+    <string name="id">Id:</string>
+    <string name="cargar_desde_inet">¿Seguro que desea cargar los datos desde la red?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancelar</string>
 </resources>

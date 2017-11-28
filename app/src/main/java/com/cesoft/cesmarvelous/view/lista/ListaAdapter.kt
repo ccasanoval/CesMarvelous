@@ -12,7 +12,7 @@ import com.cesoft.cesmarvelous.model.Model
 /**
  * Created by ccasanova on 08/11/2017
  */
-class ListaAdapter(var lista: List<Model.Comic>)
+class ListaAdapter(private var lista: List<Model.Comic>)
 	: RecyclerView.Adapter<ListaAdapter.ItemComicViewHolder>() {
 
 	var comic = MutableLiveData<Model.Comic>()
@@ -41,7 +41,7 @@ class ListaAdapter(var lista: List<Model.Comic>)
 		: RecyclerView.ViewHolder(binding.cardView) {
 
 		fun bindItemComic(comic: Model.Comic) {
-			binding.viewmodel = ListaBinder(comic)
+			binding.binder = ListaBinder(comic)
 			binding.cardView.setOnClickListener({
 				showDetalle(comic)
 			})

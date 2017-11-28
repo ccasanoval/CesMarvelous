@@ -9,6 +9,12 @@ import com.cesoft.cesmarvelous.model.Model
 class ComicData {
 
 	val count: Int = 0
-	val total: Int = 0
+	//val total: Int = 0
 	val results: List<Model.Comic>? = null
+
+	val cleanResults: List<Model.Comic>?
+		get() {
+			if(results == null)return null
+			return results.distinctBy { it.id }
+		}
 }

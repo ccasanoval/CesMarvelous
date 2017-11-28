@@ -38,6 +38,36 @@
             <set />
           </value>
         </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/ajustes/pin/RecuperarPinIdentificadoresFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/home/HomeActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/main/java/es/bancosantander/android/ui/login/LoginActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/test/java/es/bancosantander/android/RecuperarPinTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="C:/a/bansacar/san-bansacar-android/app/src/test/java/es/bancosantander/android/RecuperarPinTestTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="C:/a/micomercio/san-micomercio-android/app/build.gradle">
           <value>
             <set />
@@ -113,6 +143,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../CLEAN/CleanArchitecture/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../CLEAN/CleanArchitecture/buildsystem/dependencies.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../CLEAN/IO2017Components-master/app/build.gradle">
           <value>
             <set />
@@ -134,6 +174,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../FIREBASE/quickstart-android-master/firestore/app/src/main/java/com/google/firebase/example/fireeats/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../zGAME/LibGDX/3D/Game3Dtest/android/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../zGAME/LibGDX/3D/Game3Dtest/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../zGAME/LibGDX/3D/Game3Dtest/core/src/com/cesoft/cesgame/systems/RenderSystem.kt">
           <value>
             <set />
           </value>
@@ -198,6 +253,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/repo/ws/ComicData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/repo/ws/ComicDataResponse.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/repo/ws/MarvelWebService.kt">
           <value>
             <set />
@@ -214,6 +279,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/detalle/DetalleActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/cesoft/cesmarvelous/view/detalle/DetalleBinder.kt">
           <value>
             <set />
           </value>
@@ -264,6 +334,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/act_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_comic.xml">
           <value>
             <set />
           </value>

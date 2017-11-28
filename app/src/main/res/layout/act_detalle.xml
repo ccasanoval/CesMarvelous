@@ -182,6 +182,39 @@
                 app:layout_constraintTop_toBottomOf="@+id/lblPageCount"
                 tools:text="test"/>
 
+            <TextView
+                android:id="@+id/lblId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/id"
+                android:textColor="@color/colorAzul"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPageCount"/>
+
+            <TextView
+                android:id="@+id/txtId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:text="@{binder.id}"
+                android:textColor="@color/colorBlanco"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblId"
+                tools:text="test"/>
+
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </layout>

@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="binder"
             type="com.cesoft.cesmarvelous.view.lista.ListaBinder" />
     </data>
 
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/imagen_del_comic"
-                app:imgUrl="@{viewmodel.imgUrl}" />
+                app:imgUrl="@{binder.imgUrl}" />
 
             <View
                 android:layout_width="match_parent"
@@ -33,7 +33,7 @@
 
             <TextView
                 android:id="@+id/txtTitle"
-                android:text="@{viewmodel.model.title}"
+                android:text="@{binder.model.title}"
                 android:layout_alignParentBottom="true"
                 android:textSize="18sp"
                 android:textColor="@color/colorBlanco"
@@ -41,9 +41,38 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginRight="90dp"
+                android:layout_marginEnd="90dp"
                 tools:text="texto de prueba"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignBaseline="@+id/txtTitle"
+                android:text="@{binder.id}"
+                android:textColor="@color/colorBlanco"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="00000"/>
+
+            <TextView
+                android:id="@+id/txtIndex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@{binder.index}"
+                android:textColor="@color/colorBlanco"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="00000"/>
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

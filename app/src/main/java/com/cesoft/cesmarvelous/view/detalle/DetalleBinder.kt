@@ -40,6 +40,7 @@ class DetalleBinder(var model: Model.Comic) {
 	}
 	//______________________________________________________________________________________________
 	var issueNumber = model.issueNumber.toString()
-	//______________________________________________________________________________________________
 	var pageCount = model.pageCount.toString()
+	var id = model.id.toString()
+	var index = model.index.toString()
 }

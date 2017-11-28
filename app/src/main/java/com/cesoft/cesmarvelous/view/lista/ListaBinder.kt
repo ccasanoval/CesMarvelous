@@ -31,4 +31,7 @@ class ListaBinder(var model: Model.Comic) {
 				Picasso.with(view.context).load(path).into(view)
 		}
 	}
+
+	var id = model.id.toString()
+	var index = model.index.toString()
 }

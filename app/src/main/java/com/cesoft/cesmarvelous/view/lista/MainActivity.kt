@@ -2,12 +2,14 @@ package com.cesoft.cesmarvelous.view.lista
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.app.AlertDialog
+import android.content.Intent
+import android.support.design.widget.Snackbar
 import android.view.View
+import android.os.Bundle
+import com.google.gson.Gson
 
 import com.cesoft.cesmarvelous.R
 import com.cesoft.cesmarvelous.model.Model
@@ -15,8 +17,9 @@ import com.cesoft.cesmarvelous.util.InfiniteScrollListener
 import com.cesoft.cesmarvelous.util.Log
 import com.cesoft.cesmarvelous.view.detalle.DetalleActivity
 import com.cesoft.cesmarvelous.view.detalle.DetalleViewModel.Companion.PARAM_MODEL
-import com.google.gson.Gson
+
 import kotlinx.android.synthetic.main.act_main.*
+
 
 /**
  * Created by ccasanova on 08/11/2017
@@ -75,20 +78,30 @@ class MainActivity : AppCompatActivity() {
 			swiperefresh.isRefreshing = isLoading!!
 		})
 
-		//---------
-		val scrollListener = InfiniteScrollListener({
-			index ->
-			Log.e(TAG, "InfiniteScrollListener:-----------------------"+index)
+		//--------- SCROLL PASS LIMIT
+		val scrollListener = InfiniteScrollListener({ index ->
+				Log.e(TAG, "InfiniteScrollListener:-----------------------"+index)
 				lastVisibleItem = index
 				viewModel.loadMoreComics()
 			}, layoutManager)
 		recyclerView.layoutManager = layoutManager
 		recyclerView.addOnScrollListener(scrollListener)
 
+		//--------- SCROLL BEFORE FIRST
 		swiperefresh.setOnRefreshListener({
-			lastVisibleItem = 0
-			scrollListener.reset()
-			viewModel.loadComicList()
+
+			val builder = AlertDialog.Builder(this)
+			builder.setMessage(getString(R.string.cargar_desde_inet))
+				.setPositiveButton(getString(R.string.ok), { dialog, id ->
+					lastVisibleItem = 0
+					scrollListener.reset()
+					viewModel.getCleanComicFromWS()
+					//viewModel.getComicFromWS()//loadComicList()
+				})
+				.setNegativeButton(getString(R.string.cancel), { _, _ ->
+					swiperefresh.isRefreshing = false
+				})
+			builder.create().show()
 		})
 
 	}

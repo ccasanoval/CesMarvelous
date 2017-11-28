@@ -38,6 +38,7 @@ class ListaViewModel(app: Application) : AndroidViewModel(app)
 				Log.e(TAG, "INIT: Firebase:e:----------------------------------------", e)
 				mensaje.value = getApplication<Application>().getString(R.string.firebase_connection_error)
 			}
+			loading.value = false
 			loadComicList()
 		})
 	}
@@ -47,15 +48,17 @@ class ListaViewModel(app: Application) : AndroidViewModel(app)
 		fire.fin()
 	}
 
+	//TODO: eliminar dependencia entre repositorios !!!
+	//////////////// FIRE STORE ///////////////////////////////////////////////////////////////////
 	//______________________________________________________________________________________________
 	fun loadComicList() {
-		if(loading.value!!)return
+		if(loading.value != false)return
 		loading.value = true
-		Log.e(TAG, "loadComicList: --------------------------------- ")
+		Log.e(TAG, "loadComicList: ------b--------------------------- ")
 
 		//TODO: Repository
 
-		/*if(isFireInit) {
+		if(isFireInit) {
 			/// FIREBASE
 			fire.getComics({ data, e ->
 				if(!data.isEmpty()) {
@@ -70,14 +73,28 @@ class ListaViewModel(app: Application) : AndroidViewModel(app)
 				loading.value = false
 			})
 		}
-		else {*/
+		else {
 			/// WEB SERVICE
 			getComicFromWS()
-		//}
+		}
+	}
+
+	//______________________________________________________________________________________________
+	private fun addComicsFB(newLista: List<Model.Comic>) {
+		//if(lista.value != null)fire.deleteComics(lista.value!!)
+		fire.addComics(newLista)
 	}
 	//______________________________________________________________________________________________
-	private fun getComicFromWS() {
-		//loading.value = true
+	fun getCleanComicFromWS() {
+		Log.e(TAG, "getCleanComicFromWS:------------------------------------------- ")
+		fire.deleteAllComics({
+			getComicFromWS()
+		})
+	}
+
+	//////////////// WEB SERVICE ///////////////////////////////////////////////////////////////////
+	//______________________________________________________________________________________________
+	fun getComicFromWS() {
 		Log.e(TAG, "getComicFromWS:------------------------------------------- ")
 
 		offset = 0
@@ -85,31 +102,32 @@ class ListaViewModel(app: Application) : AndroidViewModel(app)
 		service.getComics(MarvelWebService.ORDER_COMIC_TITLE, token.serial, token.public, token.hash, LIMIT, offset)
 			.subscribeOn(Schedulers.io())
 			.observeOn(AndroidSchedulers.mainThread())
-			.subscribe(
-			{
-				res: ComicDataResponse ->
+			.subscribe({ res: ComicDataResponse ->
 				Log.e(TAG, "getComicFromWS:a-----------"+offset+"----------------- DATA: "+res.data?.count)
 				Log.e(TAG, "getComicFromWS:c-----------"+res.data?.results?.size+"----------------- DATA: "+res.data?.count)
-
-				if(res.data != null && res.data.count > 0)
+				if(res.data != null && res.data.count > 0 && res.data.cleanResults != null)
 				{
-					lista.value = res.data.results
+					val datos = res.data.cleanResults!!
+					var i = 1
+					for(item in datos) item.index = i++
+
+					Log.e(TAG, "getComicFromWS:z----------------------- DATA: "+res.data.results?.size+" / "+res.data.cleanResults?.size)
+					lista.value = datos
 					offset = res.data.count
-					fire.deleteComics()
-					fire.addComics(res.data.results!!)
+
+					addComicsFB(datos)
 					Log.e(TAG, "getComicFromWS:b-----------"+offset+"-----------------")
 				}
 				else
 				{
-					offset = 0
-					lista.value = null
+					//offset = 0
 					Log.e(TAG, "getComicFromWS:---------------------------- NO HAY DATOS")
 				}
 				loading.value = false
 			},
 			{
 				e:Throwable ->
-				offset = 0
+				//offset = 0
 				//lista.value = null
 				loading.value = false
 				Log.e(TAG, "getComicFromWS:e:-------------------------------------------"+e, e)
@@ -120,34 +138,40 @@ class ListaViewModel(app: Application) : AndroidViewModel(app)
 	fun loadMoreComics() {
 		if(loading.value!!) {
 			Log.e(TAG, "loadMoreComics:--------BUT ALREADY LODING....-------------------------------")
-
 			return
 		}
 		loading.value = true
-
 		Log.e(TAG, "loadMoreComics:---------------------------------------")
 
+		//getComicFromWS()
 		val token = Token()
 		service.getComics(MarvelWebService.ORDER_COMIC_TITLE, token.serial, token.public, token.hash, LIMIT, offset)
 			.subscribeOn(Schedulers.io())
 			.observeOn(AndroidSchedulers.mainThread())
-			.subscribe(
-			{
-				res ->
+			.subscribe({ res: ComicDataResponse ->
 				Log.e(TAG, "loadMoreComics:a-----------"+offset+"----------------- DATA: "+res.data?.count)
-
-				if(res.data != null && res.data.count > 0)
+				if(res.data != null && res.data.count > 0 && res.data.cleanResults != null)
 				{
+					val datos = res.data.cleanResults!!
+
+					//TODO: llevar a getComicFromWS y borrar todo esto
 					val union = ArrayList<Model.Comic>()
 					if(lista.value != null)
 					union.addAll(lista.value as List<Model.Comic>)
-					union.addAll(res.data.results as List<Model.Comic>)
+					union.addAll(datos)
+
+					if(lista.value == null) {
+						var i = 0
+						for(item in union) item.index = i++
+					}
+					else {
+						var i = lista.value!![lista.value!!.lastIndex].index +1
+						for(item in datos) item.index = i++
+					}
+
 					lista.value = union
-					//lista.value = res.data.results
-					//updateIndexesForRequests(adapter, lista.value!!)
-					//offset += res.data.count
 					offset = union.size
-					fire.addComics(res.data.results)
+					fire.addComics(datos)
 					Log.e(TAG, "loadMoreComics:b-----------"+offset+"-----------------"+res.data.count)
 				}
 				else

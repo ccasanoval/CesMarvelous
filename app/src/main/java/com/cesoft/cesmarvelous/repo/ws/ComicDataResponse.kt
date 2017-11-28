@@ -5,7 +5,7 @@ package com.cesoft.cesmarvelous.repo.ws
  */
 class ComicDataResponse {
 
-	val status: String? = null
-	val code: Int = 0
+	//val status: String? = null
+	//val code: Int = 0
 	val data: ComicData? = null
 }
